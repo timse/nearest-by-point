@@ -1,6 +1,6 @@
 {
   "name": "nearest-schnellaaa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
   "main": "dist/nearest-schnellaaa.js",
   "scripts": {
