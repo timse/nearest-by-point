@@ -21,14 +21,22 @@
     scrollListener = ->
         scrollTop = $win.scrollTop()
         scrollLeft = $win.scrollLeft()
+        return
     resizeListener = ->
         viewportWidth = $win.width()
         viewportHeight = $win.height()
+        return
+
+    #set values initially
+    scrollListener()
+    resizeListener()
+
     noop = ->
     ensureListeners = ->
         ensureListeners = noop
         $win.on 'scroll', throttle scrollListener, 50
         .on 'resize', throttle resizeListener, 50
+        return
 
     filterFn = (left, right, top, bottom, elem)->
         boundary = elem.getBoundingClientRect()

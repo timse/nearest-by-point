@@ -5,11 +5,17 @@ describe "nearest-schnellaaa", ->
 
     describe "helpers like event listeners", ->
 
+        describe "viewportHeight, viewportWidth, scrollTop, and scrollLeft", ->
+            it 'they should all initially be set', ->
+                scrollLeft.should.be.a.number
+                scrollTop.should.be.a.number
+                viewportWidth.should.be.a.number
+                viewportHeight.should.be.a.number
+
         describe "scrollListener", ->
 
             it 'should set the variables scrollTop and scrollLeft', ->
-                expect(scrollLeft).to.be.null
-                expect(scrollTop).to.be.null
+                window.scrollLeft = window.scrollTop = null
 
                 scrollListener()
 
@@ -18,8 +24,7 @@ describe "nearest-schnellaaa", ->
 
         describe "resizeListener", ->
             it 'should set the variables viewportHeight and viewportWidth', ->
-                expect(viewportWidth).to.be.null
-                expect(viewportHeight).to.be.null
+                window.viewportWidth = window.viewportHeight = null
 
                 resizeListener()
 

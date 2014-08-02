@@ -24,19 +24,23 @@ viewportHeight = viewportWidth = scrollTop = scrollLeft = null;
 
 scrollListener = function() {
   scrollTop = $win.scrollTop();
-  return scrollLeft = $win.scrollLeft();
+  scrollLeft = $win.scrollLeft();
 };
 
 resizeListener = function() {
   viewportWidth = $win.width();
-  return viewportHeight = $win.height();
+  viewportHeight = $win.height();
 };
+
+scrollListener();
+
+resizeListener();
 
 noop = function() {};
 
 ensureListeners = function() {
   ensureListeners = noop;
-  return $win.on('scroll', throttle(scrollListener, 50)).on('resize', throttle(resizeListener, 50));
+  $win.on('scroll', throttle(scrollListener, 50)).on('resize', throttle(resizeListener, 50));
 };
 
 filterFn = function(left, right, top, bottom, elem) {
