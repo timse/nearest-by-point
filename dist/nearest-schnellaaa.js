@@ -1,6 +1,6 @@
 /*!
 * nearest-schnellaaa - jQuery plugin to find filter a selection of elements to only those near a certain point
-* v0.0.0 - 2014-08-02 12:40:22 PM UTC
+* v0.0.1 - 2014-08-02 1:01:21 PM UTC
 * Copyright (c) 2014 timse; Licensed 
 */
  ;(function($){
@@ -30,19 +30,23 @@ viewportHeight = viewportWidth = scrollTop = scrollLeft = null;
 
 scrollListener = function() {
   scrollTop = $win.scrollTop();
-  return scrollLeft = $win.scrollLeft();
+  scrollLeft = $win.scrollLeft();
 };
 
 resizeListener = function() {
   viewportWidth = $win.width();
-  return viewportHeight = $win.height();
+  viewportHeight = $win.height();
 };
+
+scrollListener();
+
+resizeListener();
 
 noop = function() {};
 
 ensureListeners = function() {
   ensureListeners = noop;
-  return $win.on('scroll', throttle(scrollListener, 50)).on('resize', throttle(resizeListener, 50));
+  $win.on('scroll', throttle(scrollListener, 50)).on('resize', throttle(resizeListener, 50));
 };
 
 filterFn = function(left, right, top, bottom, elem) {
