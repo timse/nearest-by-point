@@ -1,0 +1,21 @@
+{
+  "name": "nearest-schnellaaa",
+  "version": "0.0.0",
+  "homepage": "https://github.com/timse/nearest-schnellaaa",
+  "authors": [
+    "Tim Sebastian <tim.sebastian@gmail.com>"
+  ],
+  "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
+  "main": "dist/nearest-schnellaaa.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "karma.conf.coffee",
+    "Gruntfile.coffee",
+    "src",
+    "static",
+    "node_modules",
+    "test"
+  ]
+}
