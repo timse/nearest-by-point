@@ -1,10 +1,10 @@
 /*!
 * nearest-schnellaaa - jQuery plugin to find filter a selection of elements to only those near a certain point
-* v0.0.1 - 2014-08-02 1:01:21 PM UTC
+* v0.0.2 - 2014-08-03 8:45:36 AM UTC
 * Copyright (c) 2014 timse; Licensed 
 */
  ;(function($){
-;var $win, ensureListeners, filterFn, noop, resizeListener, scrollLeft, scrollListener, scrollTop, throttle, viewportHeight, viewportWidth;
+;var $win, ensureListeners, filterFn, noop, resizeListener, throttle, viewportHeight, viewportWidth;
 
 $win = $(window);
 
@@ -26,19 +26,12 @@ throttle = function(fn, wait) {
   };
 };
 
-viewportHeight = viewportWidth = scrollTop = scrollLeft = null;
-
-scrollListener = function() {
-  scrollTop = $win.scrollTop();
-  scrollLeft = $win.scrollLeft();
-};
+viewportHeight = viewportWidth = null;
 
 resizeListener = function() {
   viewportWidth = $win.width();
   viewportHeight = $win.height();
 };
-
-scrollListener();
 
 resizeListener();
 
@@ -46,7 +39,7 @@ noop = function() {};
 
 ensureListeners = function() {
   ensureListeners = noop;
-  $win.on('scroll', throttle(scrollListener, 50)).on('resize', throttle(resizeListener, 50));
+  $win.on('resize', throttle(resizeListener, 50));
 };
 
 filterFn = function(left, right, top, bottom, elem) {
@@ -76,8 +69,6 @@ filterFn = function(left, right, top, bottom, elem) {
 $.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = function(x, y, prox) {
   var bottom, elem, left, res, right, top, _i, _len;
   ensureListeners();
-  x -= scrollLeft;
-  y -= scrollTop;
   left = x - prox;
   top = y - prox;
   right = x + prox;
