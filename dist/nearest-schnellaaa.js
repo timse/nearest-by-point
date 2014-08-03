@@ -1,6 +1,6 @@
 /*!
 * nearest-schnellaaa - jQuery plugin to find filter a selection of elements to only those near a certain point
-* v0.0.2 - 2014-08-03 8:45:36 AM UTC
+* v0.0.3 - 2014-08-03 9:19:49 AM UTC
 * Copyright (c) 2014 timse; Licensed 
 */
  ;(function($){
