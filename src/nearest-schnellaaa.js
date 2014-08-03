@@ -1,50 +1,10 @@
-var $win, ensureListeners, filterFn, noop, resizeListener, throttle, viewportHeight, viewportWidth;
+var $win, filterFn;
 
 $win = $(window);
-
-throttle = function(fn, wait) {
-  var last, throttled, timeoutTkn;
-  last = null;
-  timeoutTkn = null;
-  return throttled = function() {
-    var diff, now;
-    now = +(new Date);
-    diff = now - last;
-    if (!last || diff > wait) {
-      last = now;
-      return fn();
-    } else {
-      clearTimeout(timeoutTkn);
-      return timeoutTkn = setTimeout(throttled, wait - diff + 1);
-    }
-  };
-};
-
-viewportHeight = viewportWidth = null;
-
-resizeListener = function() {
-  viewportWidth = $win.width();
-  viewportHeight = $win.height();
-};
-
-resizeListener();
-
-noop = function() {};
-
-ensureListeners = function() {
-  ensureListeners = noop;
-  $win.on('resize', throttle(resizeListener, 50));
-};
 
 filterFn = function(left, right, top, bottom, elem) {
   var boundary;
   boundary = elem.getBoundingClientRect();
-  if (boundary.bottom < 0) {
-    return false;
-  }
-  if (boundary.top > viewportHeight) {
-    return false;
-  }
   if (boundary.right < left) {
     return false;
   }
@@ -62,7 +22,6 @@ filterFn = function(left, right, top, bottom, elem) {
 
 $.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = function(x, y, prox) {
   var bottom, elem, left, res, right, top, _i, _len;
-  ensureListeners();
   left = x - prox;
   top = y - prox;
   right = x + prox;
