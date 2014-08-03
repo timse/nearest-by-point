@@ -16,26 +16,20 @@
 
 
 
-    viewportHeight = viewportWidth = scrollTop = scrollLeft = null
+    viewportHeight = viewportWidth = null
 
-    scrollListener = ->
-        scrollTop = $win.scrollTop()
-        scrollLeft = $win.scrollLeft()
-        return
     resizeListener = ->
         viewportWidth = $win.width()
         viewportHeight = $win.height()
         return
 
     #set values initially
-    scrollListener()
     resizeListener()
 
     noop = ->
     ensureListeners = ->
         ensureListeners = noop
-        $win.on 'scroll', throttle scrollListener, 50
-        .on 'resize', throttle resizeListener, 50
+        $win.on 'resize', throttle resizeListener, 50
         return
 
     filterFn = (left, right, top, bottom, elem)->
@@ -71,12 +65,6 @@
 
     $.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = (x, y, prox)->
         ensureListeners()
-
-        # expecting absolute x, y but calculating in relative dimensions
-        # thus we need to substract the scrollings from the point
-
-        x -= scrollLeft
-        y -= scrollTop
 
         left = x - prox
         top = y - prox

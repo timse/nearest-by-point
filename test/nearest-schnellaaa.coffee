@@ -5,22 +5,10 @@ describe "nearest-schnellaaa", ->
 
     describe "helpers like event listeners", ->
 
-        describe "viewportHeight, viewportWidth, scrollTop, and scrollLeft", ->
+        describe "viewportHeight and viewportWidth", ->
             it 'they should all initially be set', ->
-                scrollLeft.should.be.a.number
-                scrollTop.should.be.a.number
                 viewportWidth.should.be.a.number
                 viewportHeight.should.be.a.number
-
-        describe "scrollListener", ->
-
-            it 'should set the variables scrollTop and scrollLeft', ->
-                window.scrollLeft = window.scrollTop = null
-
-                scrollListener()
-
-                scrollLeft.should.be.a.number
-                scrollTop.should.be.a.number
 
         describe "resizeListener", ->
             it 'should set the variables viewportHeight and viewportWidth', ->
@@ -54,11 +42,11 @@ describe "nearest-schnellaaa", ->
                     done()
                 , 55
         describe "ensureListeners", ->
-            it 'should set the event listeners for scrolling and resize on the window if called', ->
+            it 'should set the event listeners for resize on the window if called', ->
                 sinon.stub(jQuery.fn, 'on').returns($win)
 
                 ensureListeners()
-                $win.on.should.be.calledTwice
+                $win.on.should.be.calledOnce
 
                 $win.on.restore()
 
