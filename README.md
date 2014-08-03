@@ -4,6 +4,7 @@ The *nearest-schnellaaa* jQuery plugin filters a jQuery selection to only those 
 
 ## Why nearest schnellaaa
 While other plugins may exist that tackle the same issue, this plugin is limited in features but build with speed in mind.
+E.g. see this jsPerf: [http://jsperf.com/nearest-elements-jquery-plugins](http://jsperf.com/nearest-elements-jquery-plugins)
 
 ## Basic Usage
 After loading the plugin with your jQuery you can easily call it on a jQuery-selection like so:
