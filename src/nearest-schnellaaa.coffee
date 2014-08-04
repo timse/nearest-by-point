@@ -1,6 +1,6 @@
     $win = $ window
 
-    filterFn = (left, right, top, bottom, elem)->
+    filterFn = (left, top, right, bottom, elem)->
         boundary = elem.getBoundingClientRect()
 
         # if left of proxArea -> nope

@@ -2,7 +2,7 @@ var $win, filterFn;
 
 $win = $(window);
 
-filterFn = function(left, right, top, bottom, elem) {
+filterFn = function(left, top, right, bottom, elem) {
   var boundary;
   boundary = elem.getBoundingClientRect();
   if (boundary.right < left) {
