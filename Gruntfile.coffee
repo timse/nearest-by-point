@@ -41,13 +41,13 @@ module.exports = (grunt) ->
       options:
         bare: true
       glob_to_multiple:
-        expand: true,
-        #flatten: true,
-        cwd: 'src/',
+        expand: true
+        cwd: 'src/'
         src: [
           '**/*.coffee'
-        ],
-        dest: 'src',
+        ]
+        dest: 'src'
+        extDot: 'last'
         ext: '.js'
 
     concat:
@@ -63,14 +63,14 @@ module.exports = (grunt) ->
 
           'static/after.txt'
         ]
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'dist/jquery.<%= pkg.name %>.js'
 
     uglify:
       options:
         banner: "<%= meta.banner %>"
       dist:
         files:
-          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'dist/jquery.<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 
     watch:
       src:
