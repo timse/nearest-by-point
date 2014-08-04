@@ -22,7 +22,7 @@ describe "nearest-schnellaaa", ->
                 top = 0
                 right = 50
                 bottom = 50
-                filterFn(left, right, top, bottom, elem).should.be.true
+                filterFn(left, top, right, bottom, elem).should.be.true
 
             it 'should return false if the passed in elem is left of the expected area (boundary right is smaller than the passed in left)', ->
                 elem = {getBoundingClientRect: ->}
@@ -38,7 +38,7 @@ describe "nearest-schnellaaa", ->
                 top = 0
                 right = 50
                 bottom = 50
-                filterFn(left, right, top, bottom, elem).should.be.false
+                filterFn(left, top, right, bottom, elem).should.be.false
 
             it 'should return false if the passed in elem is right of the expected area (boundary left is bigger than the passed in right)', ->
                 elem = {getBoundingClientRect: ->}
@@ -54,7 +54,7 @@ describe "nearest-schnellaaa", ->
                 top = 0
                 right = 25
                 bottom = 50
-                filterFn(left, right, top, bottom, elem).should.be.false
+                filterFn(left, top, right, bottom, elem).should.be.false
 
             it 'should return false if the passed in elem is above the expected area (boundary bottom is smaller than the passed in top)', ->
                 elem = {getBoundingClientRect: ->}
@@ -70,7 +70,7 @@ describe "nearest-schnellaaa", ->
                 top = 100
                 right = 50
                 bottom = 50
-                filterFn(left, right, top, bottom, elem).should.be.false
+                filterFn(left, top, right, bottom, elem).should.be.false
 
             it 'should return false if the passed in elem is below the expected area (boundary top is bigger than the passed in bottom)', ->
                 elem = {getBoundingClientRect: ->}
@@ -86,7 +86,7 @@ describe "nearest-schnellaaa", ->
                 top = 0
                 right = 50
                 bottom = 50
-                filterFn(left, right, top, bottom, elem).should.be.false
+                filterFn(left, top, right, bottom, elem).should.be.false
 
 
 
