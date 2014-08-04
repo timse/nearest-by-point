@@ -10,6 +10,7 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "README.md",
     "package.json",
     "karma.conf.coffee",
     "Gruntfile.coffee",
