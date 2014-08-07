@@ -1,20 +1,20 @@
-# Welcome to the jQuery-Plugin "Nearest Schnellaaa"
+# Welcome to the jQuery-Plugin "Nearest by Point"
 
-The *nearest-schnellaaa* jQuery plugin filters a jQuery selection to only those elements that are touched by a specified area.
+The *nearest-by-point* jQuery plugin filters a jQuery selection to only those elements that are touched by a specified area.
 
-## Why nearest schnellaaa
+## Why nearest by point
 While other plugins may exist that tackle the same issue, this plugin is limited in features but build with speed in mind.
 E.g. see this jsPerf: [http://jsperf.com/nearest-elements-jquery-plugins](http://jsperf.com/nearest-elements-jquery-plugins)
 
 ## Basic Usage
 After loading the plugin with your jQuery you can easily call it on a jQuery-selection like so:
 ```
-    $('<some selector>').nearestSchnelllaa(x, y, proximity)
+    $('<some selector>').nearestByPoint(x, y, proximity)
 ```
 the return value of that call is a filterd selection of the passed in selection based on which elements are near to the specified point.
 
 ### Function signature with `x`, `y`, and `proximity`
-The params expected by `nearestSchnelllaa` are x, y of the point (relative to the viewport - see the example below to see what i mean) and a proximity which is added to the x and y to specify the area in which to look for an element.
+The params expected by `nearestByPoint` are x, y of the point (relative to the viewport - see the example below to see what i mean) and a proximity which is added to the x and y to specify the area in which to look for an element.
 If `o` was the point specified by `x` and `y`, and `proximity` was 3 the lookup area would be something like this:
 
        xxxxxxx 
@@ -33,14 +33,14 @@ Lets say you want to give all elements of a certain selection an extra class for
     var proximity = 150;
     var highlightingClass = 'highlight';
     $(document).on('mousemove', function(e){
-        // get x and y relative to the viewport - this is what nearestSchnellaaa expects - otherwise it behaves funny at best
+        // get x and y relative to the viewport - this is what nearestByPoint expects - otherwise it behaves funny at best
         x = e.clientX;
         y = e.clientY;
 
         // remove the old highlights
         $lastHighlightedElems.removeClass(highlightingClass);
         // store the current selection for the next round
-        $lastHighlightedElems.nearestSchnelllaa(x, y, proximity)
+        $lastHighlightedElems.nearestByPoint(x, y, proximity)
             .addClass(highlightingClass);
     });
 

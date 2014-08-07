@@ -1,8 +1,8 @@
 {
-  "name": "nearest-schnellaaa",
+  "name": "nearest-by-point",
   "version": "0.0.7",
   "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
-  "main": "dist/nearest-schnellaaa.js",
+  "main": "dist/nearest-by-point.js",
   "scripts": {
     "test": "grunt karma:single"
   },

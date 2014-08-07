@@ -1,12 +1,12 @@
 {
-  "name": "nearest-schnellaaa",
+  "name": "nearest-by-point",
   "version": "0.0.7",
-  "homepage": "https://github.com/timse/nearest-schnellaaa",
+  "homepage": "https://github.com/timse/nearest-by-point",
   "authors": [
     "Tim Sebastian <tim.sebastian@gmail.com>"
   ],
   "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
-  "main": "dist/nearest-schnellaaa.js",
+  "main": "dist/nearest-by-point.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
