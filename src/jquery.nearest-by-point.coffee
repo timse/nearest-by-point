@@ -23,7 +23,7 @@
         return true
 
 
-    $.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = (x, y, prox)->
+    $.fn['nearestByPoint'] = (x, y, prox)->
 
         left = x - prox
         top = y - prox

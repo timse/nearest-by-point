@@ -1,7 +1,7 @@
 expect  = chai.expect
 should  = chai.should()
 
-describe "nearest-schnellaaa", ->
+describe "nearest-by-point", ->
 
         describe "filterFn", ->
             describe "filterFn", ->

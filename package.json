@@ -1,6 +1,6 @@
 {
   "name": "nearest-by-point",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
   "main": "dist/nearest-by-point.js",
   "scripts": {

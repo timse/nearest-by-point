@@ -1,6 +1,6 @@
 /*!
 * nearest-by-point - jQuery plugin to find filter a selection of elements to only those near a certain point
-* v0.0.7 - 2014-08-07 12:16:42 PM UTC
+* v0.0.8 - 2014-08-07 12:27:00 PM UTC
 * Copyright (c) 2014 timse; Licensed 
 */
  ;(function($){
@@ -26,7 +26,7 @@ filterFn = function(left, top, right, bottom, elem) {
   return true;
 };
 
-$.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = function(x, y, prox) {
+$.fn['nearestByPoint'] = function(x, y, prox) {
   var bottom, elem, left, res, right, top, _i, _len;
   left = x - prox;
   top = y - prox;

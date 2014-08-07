@@ -20,7 +20,7 @@ filterFn = function(left, top, right, bottom, elem) {
   return true;
 };
 
-$.fn['nearest-schnellaaa'] = $.fn['nearestSchnellaaa'] = function(x, y, prox) {
+$.fn['nearestByPoint'] = function(x, y, prox) {
   var bottom, elem, left, res, right, top, _i, _len;
   left = x - prox;
   top = y - prox;
