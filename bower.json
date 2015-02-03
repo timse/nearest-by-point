@@ -6,7 +6,7 @@
     "Tim Sebastian <tim.sebastian@gmail.com>"
   ],
   "description": "jQuery plugin to find filter a selection of elements to only those near a certain point",
-  "main": "dist/nearest-by-point.js",
+  "main": "dist/jquery.nearest-by-point.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
